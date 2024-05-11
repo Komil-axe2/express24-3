@@ -190,7 +190,7 @@ const App = () => {
   return (
     <div>
       <CardCarousel cards={cards} title="Cards" customStyles={styles} maxCardsToShow={6} />
-      <h1 style={{ margin: "0 auto" }}>Do'konlar</h1>
+      <h1 style={{ marginLeft: "7%" }}>Do'konlar</h1>
       <CardCarousel cards={doKonlarCards} title="Do'konlar" customStyles={stylesForDoKonlar} maxCardsToShow={5} />
     </div>
   );

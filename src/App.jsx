@@ -105,7 +105,7 @@ const HomePage = () => {
       <Box
         sx={{
           margin: "0 auto",
-          maxWidth: "1200px",
+          maxWidth: "90%", // Adjust this percentage as needed
           paddingTop: "3rem",
           paddingBottom: "1rem",
         }}
@@ -113,11 +113,11 @@ const HomePage = () => {
         <App />
       </Box>
 
-      <Box sx={{ flexGrow: 1, maxWidth: "1144px", margin: "auto" }}>
+      <Box sx={{ flexGrow: 1, maxWidth: "90%", margin: "auto" }}>
         <Box
           sx={{
             margin: "0 auto",
-            maxWidth: "1430px",
+            maxWidth: "90%", // Adjust this percentage as needed
             paddingTop: "6rem",
             paddingBottom: "1rem",
           }}
@@ -125,12 +125,14 @@ const HomePage = () => {
           <h1>Restoranlar</h1>
         </Box>
 
-        <Box sx={{ flexGrow: 1, margin: "auto", maxWidth: "1444px" }}>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", height: "auto" }}>
+        <Box sx={{ flexGrow: 1, margin: "auto", maxWidth: "90%" }}>
+          {" "}
+          {/* Adjust this percentage as needed */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "5px", height: "auto" }}>
             {allSubcategories.slice(0, 8).map((subcategory) => (
               <button
                 style={{
-                  width: "calc(12.5% - 10px)", // Adjusted width to accommodate the gap
+                  width: "calc(12.5% - 5px)", // Adjusted width to accommodate the gap
                   height: "6vh",
                   borderRadius: "10px",
                   border: "none",
@@ -150,14 +152,13 @@ const HomePage = () => {
               </button>
             ))}
           </div>
-
-          <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 12 }} spacing={0} marginTop={2}>
+          <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 1 }} spacing={0} marginTop={2}>
             {filteredStores.slice(0, currentPage * itemsPerPage).map((restaurant, index) => (
               <Grid item xs={4} sm={6} md={4} key={index}>
                 <NavLink to={`/restaurant/${restaurant.id}`} style={navLinkStyle}>
                   <Box marginBottom={4}>
                     <Box
-                      width={"360px"}
+                      width={"90%"} // Adjust this percentage as needed
                       height={"auto"}
                       bgcolor={"#fff"}
                       borderRadius={"20px"}
@@ -193,11 +194,10 @@ const HomePage = () => {
               </Grid>
             ))}
           </Grid>
-
           {filteredStores.length > currentPage * itemsPerPage && (
             <Stack direction={"row"} justifyContent={"center"} alignItems={"center"} width={"100%"}>
               <Button
-                sx={{ width: "100%", backgroundColor: "#E5E4E2", marginBottom: "5%", marginLeft: "2%" }}
+                sx={{ width: "90%", backgroundColor: "#E5E4E2", marginBottom: "5%" }}
                 disabled={loading}
                 onClick={loadMore}
               >
